@@ -104,11 +104,11 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"node-modules/@dcloudio/uni-ui/lib/uni-search-bar/uni-search-bar":1,"node-modules/@dcloudio/uni-ui/lib/uni-swiper-dot/uni-swiper-dot":1,"node-modules/@dcloudio/uni-ui/lib/uni-icons/uni-icons":1};
+/******/ 		var cssChunks = {"colorui/components/ccSwiper":1,"node-modules/@dcloudio/uni-ui/lib/uni-icons/uni-icons":1,"pages/home/fragments/foodListCard":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"node-modules/@dcloudio/uni-ui/lib/uni-search-bar/uni-search-bar":"node-modules/@dcloudio/uni-ui/lib/uni-search-bar/uni-search-bar","node-modules/@dcloudio/uni-ui/lib/uni-swiper-dot/uni-swiper-dot":"node-modules/@dcloudio/uni-ui/lib/uni-swiper-dot/uni-swiper-dot","node-modules/@dcloudio/uni-ui/lib/uni-icons/uni-icons":"node-modules/@dcloudio/uni-ui/lib/uni-icons/uni-icons"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"colorui/components/ccHeaderBar":"colorui/components/ccHeaderBar","colorui/components/ccSwiper":"colorui/components/ccSwiper","node-modules/@dcloudio/uni-ui/lib/uni-icons/uni-icons":"node-modules/@dcloudio/uni-ui/lib/uni-icons/uni-icons","pages/home/fragments/foodListCard":"pages/home/fragments/foodListCard"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {

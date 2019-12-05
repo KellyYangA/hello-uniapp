@@ -2,7 +2,8 @@
   "pages": [
     "pages/home/index",
     "pages/my/index",
-    "pages/order/index"
+    "pages/order/index",
+    "pages/home/search"
   ],
   "subPackages": [],
   "window": {
@@ -38,7 +39,8 @@
     ]
   },
   "usingComponents": {
-    "uni-search-bar": "/node-modules/@dcloudio/uni-ui/lib/uni-search-bar/uni-search-bar",
-    "uni-swiper-dot": "/node-modules/@dcloudio/uni-ui/lib/uni-swiper-dot/uni-swiper-dot"
+    "uni-icons": "/node-modules/@dcloudio/uni-ui/lib/uni-icons/uni-icons",
+    "cc-header-bar": "/colorui/components/ccHeaderBar",
+    "cc-swiper": "/colorui/components/ccSwiper"
   }
 }

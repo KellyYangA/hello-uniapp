@@ -10,23 +10,33 @@
 /* WEBPACK VAR INJECTION */(function(createApp) {__webpack_require__(/*! uni-pages */ 4);__webpack_require__(/*! @dcloudio/uni-stat */ 5);
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
 var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ 9));
-__webpack_require__(/*! ./static/css/base.scss */ 15);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var uniSearchBar = function uniSearchBar() {return __webpack_require__.e(/*! import() | node-modules/@dcloudio/uni-ui/lib/uni-search-bar/uni-search-bar */ "node-modules/@dcloudio/uni-ui/lib/uni-search-bar/uni-search-bar").then(__webpack_require__.bind(null, /*! @dcloudio/uni-ui/lib/uni-search-bar/uni-search-bar.vue */ 36));};var uniSwiperDot = function uniSwiperDot() {return __webpack_require__.e(/*! import() | node-modules/@dcloudio/uni-ui/lib/uni-swiper-dot/uni-swiper-dot */ "node-modules/@dcloudio/uni-ui/lib/uni-swiper-dot/uni-swiper-dot").then(__webpack_require__.bind(null, /*! @dcloudio/uni-ui/lib/uni-swiper-dot/uni-swiper-dot */ 53));};
+
+var _store = _interopRequireDefault(__webpack_require__(/*! ./global/store */ 15));
+__webpack_require__(/*! ./static/css/base.scss */ 18);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _uniIcons = function _uniIcons() {return Promise.all(/*! import() | node-modules/@dcloudio/uni-ui/lib/uni-icons/uni-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/@dcloudio/uni-ui/lib/uni-icons/uni-icons")]).then(__webpack_require__.bind(null, /*! @dcloudio/uni-ui/lib/uni-icons/uni-icons */ 39));};
 
 
 
+// Vue.component('uniBadge',uniBadge)
+_vue.default.component('uniIcons', _uniIcons);
+// Vue.component('uniSearchBar',uniSearchBar)
+var ccHeaderBar = function ccHeaderBar() {return __webpack_require__.e(/*! import() | colorui/components/ccHeaderBar */ "colorui/components/ccHeaderBar").then(__webpack_require__.bind(null, /*! ./colorui/components/ccHeaderBar.vue */ 47));};
 
+_vue.default.component('ccHeaderBar', ccHeaderBar);var ccSwiper = function ccSwiper() {return __webpack_require__.e(/*! import() | colorui/components/ccSwiper */ "colorui/components/ccSwiper").then(__webpack_require__.bind(null, /*! ./colorui/components/ccSwiper.vue */ 52));};
 
+_vue.default.component('ccSwiper', ccSwiper);
 
-
-_vue.default.component('uniSearchBar', uniSearchBar);
-_vue.default.component('uniSwiperDot', uniSwiperDot);
+// import uniSearchBar from '@dcloudio/uni-ui/lib/uni-search-bar/uni-search-bar.vue' 
+// import uniSwiperDot from "@dcloudio/uni-ui/lib/uni-swiper-dot/uni-swiper-dot"
+// Vue.component('uniSearchBar', uniSearchBar)
+// Vue.component('uniSwiperDot', uniSwiperDot)
 
 _vue.default.config.productionTip = false;
 
 _App.default.mpType = 'app';
 
 var app = new _vue.default(_objectSpread({},
-_App.default));
+_App.default, {
+  store: _store.default }));
 
 createApp(app).$mount();
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createApp"]))
@@ -101,10 +111,32 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 {
   onLaunch: function onLaunch() {
-    console.log('App Launch');
+    uni.getSystemInfo({
+      success: function success(e) {
+
+
+
+
+
+
+
+
+
+        _vue.default.prototype.StatusBar = e.statusBarHeight;
+        var custom = wx.getMenuButtonBoundingClientRect();
+        _vue.default.prototype.Custom = custom;
+        _vue.default.prototype.CustomBar = custom.bottom + custom.top - e.statusBarHeight;
+
+
+
+
+
+      } });
+
   },
   onShow: function onShow() {
     console.log('App Show');
@@ -112,6 +144,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   onHide: function onHide() {
     console.log('App Hide');
   } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 /* 12 */

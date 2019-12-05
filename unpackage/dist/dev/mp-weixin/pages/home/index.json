@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "饱了么",
-  "usingComponents": {}
+  "usingComponents": {
+    "food-list-card": "/pages/home/fragments/foodListCard"
+  }
 }
