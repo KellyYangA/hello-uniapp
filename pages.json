@@ -1,0 +1,50 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/home/index",
+			"style": {
+				"navigationBarTitleText": "饱了么"
+			}
+		}
+	    ,{
+            "path" : "pages/my/index",
+            "style" : {
+				"navigationBarTitleText": "我的"}
+        }
+        ,{
+            "path" : "pages/order/index",
+            "style" : {
+				"navigationBarTitleText": "订单"}
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "饱了么",
+		"navigationBarBackgroundColor": "#1890ff",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+	    "color": "#7A7E83",
+	    "selectedColor": "#1890ff",
+	    "borderStyle": "black",
+	    "backgroundColor": "#ffffff",
+	    "list": [{
+	        "pagePath": "pages/home/index",
+	        "iconPath": "static/img/tabbar_home.png",
+	        "selectedIconPath": "static/img/tabbar_home_selected.png",
+	        "text": "首页"
+	    },
+		{
+		    "pagePath": "pages/order/index",
+		    "iconPath": "static/img/tabbar_order.png",
+		    "selectedIconPath": "static/img/tabbar_order_selected.png",
+		    "text": "订单"
+		},
+		{
+		    "pagePath": "pages/my/index",
+		    "iconPath": "static/img/tabbar_user.png",
+		    "selectedIconPath": "static/img/tabbar_user_selected.png",
+		    "text": "我的"
+		}]
+	}
+}
